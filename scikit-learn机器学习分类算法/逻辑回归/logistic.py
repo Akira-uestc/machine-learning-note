@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
  
- 
+
 # sigmod函数，即得分函数,计算数据的概率是0还是1；得到y大于等于0.5是1，y小于等于0.5为0。
 def sigmod(x):
     return 1 / (1 + np.exp(-x))
