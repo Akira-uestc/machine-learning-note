@@ -142,3 +142,26 @@ class SVM:
                 break
 
         return self
+    
+#调用sklearn鸢尾花数据进行测试
+
+from sklearn.datasets import load_iris
+
+# 加载鸢尾花数据集
+X, y = load_iris(return_X_y=True)
+
+# 标签转换
+y = np.where(y == 0, -1, 1)
+
+# 创建SVM对象，使用线性核函数
+svm = SVM(kernel='linear')
+
+# 训练模型
+svm.fit(X, y)
+
+# 预测新的数据
+X_new = np.array([5.0, 3.5, 1.5, 0.5]).astype(int) # 新的数据
+y_pred = svm.predict(X_new) # 预测结果
+
+# 输出预测结果
+print(y_pred)
